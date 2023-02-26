@@ -50,11 +50,12 @@
                     <div class="col"></div>
                     <div class="col-6">
                         <input type="number" class="form-control border-dark" placeholder="Enter student number"
-                            id="student_number_form" min="1" required>
+                            id="student-number-form" min="1" required>
                     </div>
                     <div class="col"></div>
                 </div>
-                <button type="submit" class="btn btn-primary fs-4 fw-bold" onclick="setStudentNumber()">Enter</button>
+                <button type="submit" class="btn btn-primary fs-4 fw-bold" onclick="setStudentNumber()"
+                    id="student-number-button">Enter</button>
             </div>
             <h3 id="number-of-student-text" hidden></h3>
 
@@ -62,12 +63,12 @@
                 <div class="row p-3">
                     <div class="col"></div>
                     <div class="col-6">
-                        <input type="text" class="form-control border-dark" placeholder="Enter student name ( Separated by comma )"
-                            id="student-name-form">
+                        <input type="text" class="form-control border-dark"
+                            placeholder="Enter student name ( Separated by comma )" id="student-name-form">
                     </div>
                     <div class="col"></div>
                 </div>
-                <button type="submit" class="btn btn-primary fw-bold" onclick="sort()">Sort!</button>
+                <button type="submit" class="btn btn-primary fw-bold" onclick="sort()" id="student-name-button">Sort!</button>
                 <button type="button" class="btn btn-outline-secondary" onclick="resetHouse()"><i
                         class="bi bi-arrow-clockwise"></i></button>
             </div>
@@ -86,7 +87,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="griffindor-student-count">0 Student</div>
+                        <div class="col" id="griffindor-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -99,7 +100,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="slytherin-student-count">0 Student</div>
+                        <div class="col" id="slytherin-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -112,7 +113,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="ravenclaw-student-count">0 Student</div>
+                        <div class="col" id="ravenclaw-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -125,7 +126,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="hufflepuff-student-count">0 Student</div>
+                        <div class="col" id="hufflepuff-student-count">0 student</div>
                     </div>
                 </div>
             </div>
