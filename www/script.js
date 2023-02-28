@@ -60,7 +60,7 @@ function resetHouse() {
     document.getElementById('hufflepuff-box').innerHTML = '';
 }
 
-function sort() {
+async function sort() {
     if (sorted >= n) return;
     if (document.getElementById('student-name-form').value == '') return;
     let students = document.getElementById('student-name-form').value.split(",");
@@ -69,7 +69,24 @@ function sort() {
 
     for (let index = 0; index < students.length; index++) {
         sortToHouse(students[index].trim());
+        await new Promise(r => setTimeout(r, 250));
     }
+
+}
+
+function playAnimation(myDiv) {
+    myDiv.classList.add("blink");
+    setTimeout(function () {
+        myDiv.classList.remove("blink");
+    }, 500);
+}
+
+function playEffect(myDiv) {
+    myDiv.hidden = false;
+    setTimeout(function () {
+        myDiv.hidden = true;
+
+    }, 1000);
 
 }
 
@@ -95,24 +112,32 @@ function sortToHouse(student) {
             document.getElementById('griffindor-box').innerHTML += house_pop[0] + ') ' + student + '<br>';
             house_pop[0] > 1 ? document.getElementById('griffindor-student-count').innerHTML = house_pop[0] + ' students' : document.getElementById('griffindor-student-count').innerHTML = house_pop[0] + ' student';
             document.getElementById('griffindor-box').scrollTo(0, document.getElementById('griffindor-box').scrollHeight);
+            playEffect(document.getElementById('griffindor-effect'));
+            playAnimation(document.getElementById('griffindor-div'));
             break;
         case 1:
             slytherin.push(student)
             document.getElementById('slytherin-box').innerHTML += house_pop[1] + ') ' + student + '<br>';
             house_pop[1] > 1 ? document.getElementById('slytherin-student-count').innerHTML = house_pop[1] + ' students' : document.getElementById('slytherin-student-count').innerHTML = house_pop[1] + ' student';
             document.getElementById('slytherin-box').scrollTo(0, document.getElementById('slytherin-box').scrollHeight);
+            playEffect(document.getElementById('slytherin-effect'));
+            playAnimation(document.getElementById('slytherin-div'));
             break;
         case 2:
             ravenclaw.push(student)
             document.getElementById('ravenclaw-box').innerHTML += house_pop[2] + ') ' + student + '<br>';
             house_pop[2] > 1 ? document.getElementById('ravenclaw-student-count').innerHTML = house_pop[2] + ' students' : document.getElementById('ravenclaw-student-count').innerHTML = house_pop[2] + ' student';
             document.getElementById('ravenclaw-box').scrollTo(0, document.getElementById('ravenclaw-box').scrollHeight);
+            playEffect(document.getElementById('ravenclaw-effect'));
+            playAnimation(document.getElementById('ravenclaw-div'));
             break;
         case 3:
             hufflepuff.push(student)
             document.getElementById('hufflepuff-box').innerHTML += house_pop[3] + ') ' + student + '<br>';
             house_pop[3] > 1 ? document.getElementById('hufflepuff-student-count').innerHTML = house_pop[3] + ' students' : document.getElementById('hufflepuff-student-count').innerHTML = house_pop[3] + ' student';
             document.getElementById('hufflepuff-box').scrollTo(0, document.getElementById('hufflepuff-box').scrollHeight);
+            playEffect(document.getElementById('hufflepuff-effect'));
+            playAnimation(document.getElementById('hufflepuff-div'));
             break;
         default:
             break;

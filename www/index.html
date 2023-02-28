@@ -11,36 +11,20 @@
     <script src="./script.js" defer></script>
     <title>Hogwarts Sorting Hat</title>
 
+    <link rel="stylesheet" href="styles.css">
+
     <style>
-        * {
-            scrollbar-width: auto;
-            scrollbar-color: #b0b0b0 #ffffff;
-        }
 
-        *::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        *::-webkit-scrollbar-track {
-            background: #ffffff;
-        }
-
-        *::-webkit-scrollbar-thumb {
-            background-color: #b0b0b0;
-            border-radius: 10px;
-            border: 3px solid #ffffff;
-        }
     </style>
 
 </head>
 
 <body>
 
-
     <div class="container p-3">
         <center>
             <div class="row rounded mb-5" style="background-color: rgb(59, 0, 83);">
-                <h1 class="p-5" style="color: white;">
+                <h1 class="p-5 fw-bold display-4" style="color: white;">
                     Hogwarts Sorting Hat
                 </h1>
             </div>
@@ -68,7 +52,8 @@
                     </div>
                     <div class="col"></div>
                 </div>
-                <button type="submit" class="btn btn-primary fw-bold" onclick="sort()" id="student-name-button">Sort!</button>
+                <button type="submit" class="btn btn-primary fw-bold" onclick="sort()"
+                    id="student-name-button">Sort!</button>
                 <button type="button" class="btn btn-outline-secondary" onclick="resetHouse()"><i
                         class="bi bi-arrow-clockwise"></i></button>
             </div>
@@ -76,10 +61,14 @@
 
     </div>
 
-    <div class=" container">
+    <div class="container">
         <div class="row">
-            <div class="col mt-3">
-                <div class="border border-dark rounded p-3" style="background-color: rgb(241, 188, 188);">
+
+            <div class="col mt-3" id="griffindor-div">
+                <div class="z-2 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
+                        style="filter: opacity(0.5) drop-shadow(0 0 0 rgb(146, 0, 0));" id="griffindor-effect" hidden>
+                </div>
+                <div class="border border-dark rounded p-3 z-1" style="background-color: rgb(241, 188, 188);">
                     <h3>Griffindor</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="griffindor-box"
                         style="height: 12em">
@@ -87,11 +76,14 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="griffindor-student-count">0 student</div>
+                        <div class="col-6 text-end" id="griffindor-student-count">0 student</div>
                     </div>
                 </div>
             </div>
-            <div class="col mt-3">
+
+            <div class="col mt-3" id="slytherin-div">
+                <div class="z-1 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
+                        style="filter: opacity(0.5) drop-shadow(0 0 0 green);" id="slytherin-effect" hidden></div>
                 <div class="border border-dark rounded p-3" style="background-color: rgb(188, 241, 212);">
                     <h3>Slytherin</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="slytherin-box"
@@ -100,11 +92,14 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="slytherin-student-count">0 student</div>
+                        <div class="col-6 text-end" id="slytherin-student-count">0 student</div>
                     </div>
                 </div>
             </div>
-            <div class="col mt-3">
+
+            <div class="col mt-3" id="ravenclaw-div">
+                <div class="z-1 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
+                        style="filter: opacity(0.5) drop-shadow(0 0 0 blue);" id="ravenclaw-effect" hidden></div>
                 <div class="border border-dark rounded p-3" style="background-color: rgb(188, 226, 241);">
                     <h3>Ravenclaw</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="ravenclaw-box"
@@ -113,11 +108,15 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="ravenclaw-student-count">0 student</div>
+                        <div class="col-6 text-end" id="ravenclaw-student-count">0 student</div>
                     </div>
                 </div>
             </div>
-            <div class="col mt-3">
+
+            <div class="col mt-3" id="hufflepuff-div">
+                <div class="z-1 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
+                        style="filter: opacity(0.5) drop-shadow(0 0 0 rgb(157, 136, 0));" id="hufflepuff-effect" hidden>
+                </div>
                 <div class="border border-dark rounded p-3" style="background-color: rgb(241, 241, 188);">
                     <h3>Hufflepuff</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="hufflepuff-box"
@@ -126,7 +125,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col" id="hufflepuff-student-count">0 student</div>
+                        <div class="col-6 text-end" id="hufflepuff-student-count">0 student</div>
                     </div>
                 </div>
             </div>
