@@ -70,6 +70,7 @@ async function sort() {
     for (let index = 0; index < students.length; index++) {
         sortToHouse(students[index].trim());
         await new Promise(r => setTimeout(r, 250));
+        if (sorted == 0) break;
     }
 
 }
