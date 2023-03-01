@@ -75,11 +75,12 @@ async function sort() {
         sortToHouse(students[index].trim());
         await new Promise(r => setTimeout(r, 250));
         if (sorted == 0) {
-            document.getElementById('student-name-form').disabled = false;
             break;
         }
     }
     document.getElementById('student-name-form').disabled = false;
+    document.getElementById("student-name-form").focus();
+
 
 }
 
