@@ -1,6 +1,8 @@
 var n = 0;
 var sorted = 0;
 
+const houses = ['griffindor', 'slytherin', 'ravenclaw', 'hufflepuff'];
+
 var griffindor = []; // 0
 var slytherin = [];  // 1
 var ravenclaw = [];  // 2
@@ -54,10 +56,11 @@ function resetHouse() {
     houseLeftOver = [0, 1, 2, 3];
 
     document.getElementById('number-of-student-text').innerHTML = "Number of student : " + n + " ( " + (n - sorted) + " remaining )";
-    document.getElementById('griffindor-box').innerHTML = '';
-    document.getElementById('slytherin-box').innerHTML = '';
-    document.getElementById('ravenclaw-box').innerHTML = '';
-    document.getElementById('hufflepuff-box').innerHTML = '';
+
+    houses.forEach(house => {
+        document.getElementById(house + '-box').innerHTML = '';
+        document.getElementById(house + '-student-count').innerHTML = '0 student';
+    });
 }
 
 async function sort() {
@@ -67,26 +70,30 @@ async function sort() {
     if (students.length == 0) return;
     if (students.length > n - sorted) return;
 
+    document.getElementById('student-name-form').disabled = true;
     for (let index = 0; index < students.length; index++) {
         sortToHouse(students[index].trim());
         await new Promise(r => setTimeout(r, 250));
-        if (sorted == 0) break;
+        if (sorted == 0) {
+            document.getElementById('student-name-form').disabled = false;
+            break;
+        }
     }
+    document.getElementById('student-name-form').disabled = false;
 
 }
 
-function playAnimation(myDiv) {
-    myDiv.classList.add("blink");
+function playAnimation(element) {
+    element.classList.add("blink");
     setTimeout(function () {
-        myDiv.classList.remove("blink");
-    }, 500);
+        element.classList.remove("blink");
+    }, 200);
 }
 
-function playEffect(myDiv) {
-    myDiv.hidden = false;
+function playEffect(element) {
+    element.hidden = false;
     setTimeout(function () {
-        myDiv.hidden = true;
-
+        element.hidden = true;
     }, 1000);
 
 }
@@ -110,39 +117,24 @@ function sortToHouse(student) {
     switch (house) {
         case 0:
             griffindor.push(student);
-            document.getElementById('griffindor-box').innerHTML += house_pop[0] + ') ' + student + '<br>';
-            house_pop[0] > 1 ? document.getElementById('griffindor-student-count').innerHTML = house_pop[0] + ' students' : document.getElementById('griffindor-student-count').innerHTML = house_pop[0] + ' student';
-            document.getElementById('griffindor-box').scrollTo(0, document.getElementById('griffindor-box').scrollHeight);
-            playEffect(document.getElementById('griffindor-effect'));
-            playAnimation(document.getElementById('griffindor-div'));
             break;
         case 1:
             slytherin.push(student)
-            document.getElementById('slytherin-box').innerHTML += house_pop[1] + ') ' + student + '<br>';
-            house_pop[1] > 1 ? document.getElementById('slytherin-student-count').innerHTML = house_pop[1] + ' students' : document.getElementById('slytherin-student-count').innerHTML = house_pop[1] + ' student';
-            document.getElementById('slytherin-box').scrollTo(0, document.getElementById('slytherin-box').scrollHeight);
-            playEffect(document.getElementById('slytherin-effect'));
-            playAnimation(document.getElementById('slytherin-div'));
             break;
         case 2:
             ravenclaw.push(student)
-            document.getElementById('ravenclaw-box').innerHTML += house_pop[2] + ') ' + student + '<br>';
-            house_pop[2] > 1 ? document.getElementById('ravenclaw-student-count').innerHTML = house_pop[2] + ' students' : document.getElementById('ravenclaw-student-count').innerHTML = house_pop[2] + ' student';
-            document.getElementById('ravenclaw-box').scrollTo(0, document.getElementById('ravenclaw-box').scrollHeight);
-            playEffect(document.getElementById('ravenclaw-effect'));
-            playAnimation(document.getElementById('ravenclaw-div'));
             break;
         case 3:
             hufflepuff.push(student)
-            document.getElementById('hufflepuff-box').innerHTML += house_pop[3] + ') ' + student + '<br>';
-            house_pop[3] > 1 ? document.getElementById('hufflepuff-student-count').innerHTML = house_pop[3] + ' students' : document.getElementById('hufflepuff-student-count').innerHTML = house_pop[3] + ' student';
-            document.getElementById('hufflepuff-box').scrollTo(0, document.getElementById('hufflepuff-box').scrollHeight);
-            playEffect(document.getElementById('hufflepuff-effect'));
-            playAnimation(document.getElementById('hufflepuff-div'));
             break;
         default:
             break;
     }
+    document.getElementById(houses[house] + '-box').innerHTML += house_pop[house] + ') ' + student + '<br>';
+    house_pop[house] > 1 ? document.getElementById(houses[house] + '-student-count').innerHTML = house_pop[house] + ' students' : document.getElementById(houses[house] + '-student-count').innerHTML = house_pop[house] + ' student';
+    document.getElementById(houses[house] + '-box').scrollTo(0, document.getElementById(houses[house] + '-box').scrollHeight);
+    playEffect(document.getElementById(houses[house] + '-effect'));
+    playAnimation(document.getElementById(houses[house] + '-div'));
 
     document.getElementById('number-of-student-text').innerHTML = "Number of student : " + n + " ( " + (n - sorted) + " remaining )";
     document.getElementById('student-name-form').value = '';

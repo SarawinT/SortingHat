@@ -1,10 +1,10 @@
 @keyframes blink {
     0% {
-        opacity: 0;
+        opacity: 0.25;
     }
 
     50% {
-        opacity: 0.15;
+        opacity: 0.35;
     }
 
     100% {
@@ -13,7 +13,7 @@
 }
 
 .blink {
-    animation: blink 0.5s both;
+    animation: blink 0.2s both;
 }
 
 * {
