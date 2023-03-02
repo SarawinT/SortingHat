@@ -21,10 +21,12 @@
 
 <body>
 
+
+
     <div class="container p-2">
         <center>
             <div class="row rounded mb-4" style="background-color: rgb(59, 0, 83);">
-                <h1 class="p-5 fw-bold display-4" style="color: white;">
+                <h1 class="p-5 fw-bold display-5" style="color: white;">
                     Hogwarts Sorting Hat
                 </h1>
             </div>
@@ -38,7 +40,7 @@
                     </div>
                     <div class="col"></div>
                 </div>
-                <button type="submit" class="btn btn-primary fs-4 fw-bold" onclick="setStudentNumber()"
+                <button type="submit" class="btn btn-primary fs-4 fw-bold mt-4" onclick="setStudentNumber()"
                     id="student-number-button">Enter</button>
             </div>
             <h3 id="number-of-student-text" hidden></h3>
@@ -64,19 +66,21 @@
     <div class="container">
         <div class="row">
 
-            <div class="col mt-3" id="griffindor-div">
+            <div class="col mt-3" id="gryffindor-div">
                 <div class="z-2 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
-                        style="filter: opacity(0.5) drop-shadow(0 0 0 rgb(146, 0, 0));" id="griffindor-effect" hidden>
+                        style="filter: opacity(0.5) drop-shadow(0 0 0 rgb(146, 0, 0));" id="gryffindor-effect" hidden>
                 </div>
-                <div class="border border-dark rounded p-3 z-1" style="background-color: rgb(241, 188, 188);">
-                    <h3>Griffindor</h3>
-                    <div class="border border-dark rounded p-3 bg-white overflow-auto" id="griffindor-box"
+                <div class="border border-dark rounded p-3"
+                    style="background-color: rgb(241, 188, 188); background-image: url('./assets/GryffindoCrest.png'); background-size: 80%; background-repeat: no-repeat; background-position: right top -40px;">
+
+                    <h3>Gryffindor</h3>
+                    <div class="border border-dark rounded p-3 bg-white overflow-auto" id="gryffindor-box"
                         style="height: 12em">
                     </div>
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col-6 text-end" id="griffindor-student-count">0 student</div>
+                        <div class="col-6 text-end" id="gryffindor-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -84,7 +88,8 @@
             <div class="col mt-3" id="slytherin-div">
                 <div class="z-1 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
                         style="filter: opacity(0.5) drop-shadow(0 0 0 green);" id="slytherin-effect" hidden></div>
-                <div class="border border-dark rounded p-3" style="background-color: rgb(188, 241, 212);">
+                <div class="border border-dark rounded p-3"
+                    style="background-color: rgb(188, 241, 212); background-image: url('./assets/SlytherinCrest.png'); background-size: 80%; background-repeat: no-repeat; background-position: right top -40px;">
                     <h3>Slytherin</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="slytherin-box"
                         style="height: 12em">
@@ -100,7 +105,8 @@
             <div class="col mt-3" id="ravenclaw-div">
                 <div class="z-1 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
                         style="filter: opacity(0.5) drop-shadow(0 0 0 blue);" id="ravenclaw-effect" hidden></div>
-                <div class="border border-dark rounded p-3" style="background-color: rgb(188, 226, 241);">
+                <div class="border border-dark rounded p-3"
+                    style="background-color: rgb(188, 226, 241); background-image: url('./assets/RavenclawCrest.png'); background-size: 80%; background-repeat: no-repeat; background-position: right top -40px;">
                     <h3>Ravenclaw</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="ravenclaw-box"
                         style="height: 12em">
@@ -117,7 +123,8 @@
                 <div class="z-1 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
                         style="filter: opacity(0.5) drop-shadow(0 0 0 rgb(157, 136, 0));" id="hufflepuff-effect" hidden>
                 </div>
-                <div class="border border-dark rounded p-3" style="background-color: rgb(241, 241, 188);">
+                <div class="border border-dark rounded p-3"
+                    style="background-color: rgb(241, 241, 188); background-image: url('./assets/HufflepuffCrest.png'); background-size: 80%; background-repeat: no-repeat; background-position: right top -40px;">
                     <h3>Hufflepuff</h3>
                     <div class="border border-dark rounded p-3 bg-white overflow-auto" id="hufflepuff-box"
                         style="height: 12em">
@@ -134,7 +141,8 @@
     </div>
 
     <div class="m-2 text-end mt-4" style="bottom: 0; right: 0;">Sarawin Thiamthet - Silpakorn University - 2023 / <i
-            class="bi bi-envelope"> </i> <a href="mailto: thiamthet_s@su.ac.th" target="_blank">thiamthet_s@su.ac.th</a>
+            class="bi bi-envelope"> </i> <a href="mailto: contact.sarawin@gmail.com"
+            target="_blank">contact.sarawin@gmail.com</a>
         / <i class="bi bi-github"></i> <a href="https://github.com/SarawinT" target="_blank">SarawinT</a>
     </div>
 

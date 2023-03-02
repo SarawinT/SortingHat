@@ -1,9 +1,9 @@
 var n = 0;
 var sorted = 0;
 
-const houses = ['griffindor', 'slytherin', 'ravenclaw', 'hufflepuff'];
+const houses = ['gryffindor', 'slytherin', 'ravenclaw', 'hufflepuff'];
 
-var griffindor = []; // 0
+var gryffindor = []; // 0
 var slytherin = [];  // 1
 var ravenclaw = [];  // 2
 var hufflepuff = []; // 3
@@ -44,11 +44,12 @@ function setStudentNumber() {
     document.getElementById('number-of-student-text').innerHTML = "Number of student : " + n + " ( " + (n - sorted) + " remaining )";
     document.getElementById('number-of-student-text').hidden = false;
     document.getElementById('student_name_div').hidden = false;
+
 }
 
 function resetHouse() {
     house_pop = [0, 0, 0, 0];
-    griffindor = [];
+    gryffindor = [];
     slytherin = [];
     ravenclaw = [];
     hufflepuff = [];
@@ -56,6 +57,8 @@ function resetHouse() {
     houseLeftOver = [0, 1, 2, 3];
 
     document.getElementById('number-of-student-text').innerHTML = "Number of student : " + n + " ( " + (n - sorted) + " remaining )";
+    document.getElementById('student-name-form').disabled = false;
+
 
     houses.forEach(house => {
         document.getElementById(house + '-box').innerHTML = '';
@@ -64,7 +67,6 @@ function resetHouse() {
 }
 
 async function sort() {
-    if (sorted >= n) return;
     if (document.getElementById('student-name-form').value == '') return;
     let students = document.getElementById('student-name-form').value.split(",");
     if (students.length == 0) return;
@@ -80,6 +82,10 @@ async function sort() {
     }
     document.getElementById('student-name-form').disabled = false;
     document.getElementById("student-name-form").focus();
+
+    if (sorted >= n) {
+        document.getElementById('student-name-form').disabled = true;
+    }
 
 
 }
@@ -100,6 +106,7 @@ function playEffect(element) {
 }
 
 function sortToHouse(student) {
+
     if (student.length == 0) return;
     let houseToSort = [];
     for (let index = 0; index < house_pop.length; index++) {
@@ -117,7 +124,7 @@ function sortToHouse(student) {
     sorted++;
     switch (house) {
         case 0:
-            griffindor.push(student);
+            gryffindor.push(student);
             break;
         case 1:
             slytherin.push(student)
@@ -139,5 +146,9 @@ function sortToHouse(student) {
 
     document.getElementById('number-of-student-text').innerHTML = "Number of student : " + n + " ( " + (n - sorted) + " remaining )";
     document.getElementById('student-name-form').value = '';
+
+    
+
+    
 
 }
