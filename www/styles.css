@@ -1,3 +1,15 @@
+
+
+@font-face {
+    font-family: Harry P;
+    src: url(assets/HARRYP__.TTF);
+}
+
+.border h3 {
+    font-family: Harry P;
+    font-size: 230%;
+}
+
 @keyframes blink {
     0% {
         opacity: 0.25;
