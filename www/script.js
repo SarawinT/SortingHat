@@ -90,23 +90,7 @@ async function sort() {
 
 }
 
-function playAnimation(element) {
-    element.classList.add("blink");
-    setTimeout(function () {
-        element.classList.remove("blink");
-    }, 200);
-}
-
-function playEffect(element) {
-    element.hidden = false;
-    setTimeout(function () {
-        element.hidden = true;
-    }, 1000);
-
-}
-
 function sortToHouse(student) {
-
     if (student.length == 0) return;
     let houseToSort = [];
     for (let index = 0; index < house_pop.length; index++) {
@@ -147,8 +131,18 @@ function sortToHouse(student) {
     document.getElementById('number-of-student-text').innerHTML = "Number of student : " + n + " ( " + (n - sorted) + " remaining )";
     document.getElementById('student-name-form').value = '';
 
-    
+}
 
-    
+function playAnimation(element) {
+    element.classList.add("blink");
+    setTimeout(function () {
+        element.classList.remove("blink");
+    }, 200);
+}
 
+function playEffect(element) {
+    element.hidden = false;
+    setTimeout(function () {
+        element.hidden = true;
+    }, 1000);
 }

@@ -25,7 +25,9 @@
 
     <div class="container p-2">
         <center>
+
             <div class="row rounded mb-4" style="background-color: rgb(59, 0, 83);">
+
                 <h1 class="p-5 fw-bold display-5" style="color: white;">
                     Hogwarts Sorting Hat
                 </h1>
@@ -34,8 +36,8 @@
             <div class="container" id="student_number_div">
                 <div class="row p-1">
                     <div class="col"></div>
-                    <div class="col-6">
-                        <input type="number" class="form-control border-dark" placeholder="Enter student number"
+                    <div class="col-xs-12 col-sm-10 col-md-8">
+                        <input type="number" class="form-control border-dark" placeholder="Enter number of students"
                             id="student-number-form" min="1" required>
                     </div>
                     <div class="col"></div>
@@ -48,7 +50,7 @@
             <div class="container" id="student_name_div" hidden>
                 <div class="row p-2">
                     <div class="col"></div>
-                    <div class="col-6">
+                    <div class="col-md-8 col-sm-10">
                         <input type="text" class="form-control border-dark"
                             placeholder="Enter student name ( Separated by comma )" id="student-name-form">
                     </div>
@@ -64,7 +66,7 @@
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row row-cols-xs-2 row-cols-sm-2 row-cols-md-4">
 
             <div class="col mt-3" id="gryffindor-div">
                 <div class="z-2 position-absolute"><img src="https://i.gifer.com/XZ5V.gif" width="40%"
@@ -80,7 +82,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col-6 text-end" id="gryffindor-student-count">0 student</div>
+                        <div class="col-10 text-end" id="gryffindor-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -97,7 +99,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col-6 text-end" id="slytherin-student-count">0 student</div>
+                        <div class="col-10 text-end" id="slytherin-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -114,7 +116,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col-6 text-end" id="ravenclaw-student-count">0 student</div>
+                        <div class="col-10 text-end" id="ravenclaw-student-count">0 student</div>
                     </div>
                 </div>
             </div>
@@ -132,7 +134,7 @@
                     <div class="row mt-1">
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col-6 text-end" id="hufflepuff-student-count">0 student</div>
+                        <div class="col-10 text-end" id="hufflepuff-student-count">0 student</div>
                     </div>
                 </div>
             </div>
