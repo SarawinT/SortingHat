@@ -4,11 +4,11 @@ ODD E-Thailand SU CO-OP Assignment
 
 ## How to run
 - First method ( Recommend ) :
-    1. Install dependencies by running:
+    1) Install dependencies by running:
 
         `npm i`
 
-    2. Run a server:
+    2) Run a server:
 
         `node .`
 
